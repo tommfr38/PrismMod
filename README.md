@@ -21,14 +21,17 @@ E N E     E = minecraft:emerald_block
 E E E     N = minecraft:netherite_block
 ```
 
-**Prism Sword** — 8 Prism Ingots ringing 1 dragon egg. The egg is consumed, so the sword
-cannot exist before the Ender Dragon is beaten.
+**Prism Sword** — every sword in the game, the Prism Ingot, and a dragon egg. Nine
+ingredients, one of each:
 
 ```
-I I I
-I D I     I = prismmod:prism_ingot
-I I I     D = minecraft:dragon_egg
+wooden    ingot     netherite
+stone     egg       diamond
+copper    iron      golden
 ```
+
+The recipe is **shapeless**, so that arrangement works and so does any other. The egg is
+consumed, so the sword cannot exist before the Ender Dragon is beaten.
 
 **Dragon egg refund** — put the Prism Sword alone in a crafting grid to get the dragon
 egg back. The sword is consumed; the bars, the stick and any enchantments are not

@@ -1,14 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "equipment",
-  "key": {
-    "D": "minecraft:dragon_egg",
-    "I": "prismmod:prism_ingot"
-  },
-  "pattern": [
-    "III",
-    "IDI",
-    "III"
+  "ingredients": [
+    "minecraft:wooden_sword",
+    "minecraft:stone_sword",
+    "minecraft:copper_sword",
+    "minecraft:iron_sword",
+    "minecraft:golden_sword",
+    "minecraft:diamond_sword",
+    "minecraft:netherite_sword",
+    "prismmod:prism_ingot",
+    "minecraft:dragon_egg"
   ],
   "result": {
     "id": "prismmod:prism_sword"
