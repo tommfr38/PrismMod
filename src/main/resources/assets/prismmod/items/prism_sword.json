@@ -1,0 +1,60 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "prismmod:item/prism_sword"
+        },
+        "when": [
+          "gui",
+          "ground",
+          "fixed",
+          "on_shelf"
+        ]
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:condition",
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "prismmod:item/prism_sword"
+      },
+      "on_true": {
+        "type": "minecraft:range_dispatch",
+        "entries": [
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "prismmod:item/prism_sword_charging_2"
+            },
+            "threshold": 3.0
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "prismmod:item/prism_sword_charging_3"
+            },
+            "threshold": 6.0
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "prismmod:item/prism_sword_charging_4"
+            },
+            "threshold": 9.0
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:model",
+          "model": "prismmod:item/prism_sword_charging_1"
+        },
+        "property": "minecraft:use_duration",
+        "scale": 1.0
+      },
+      "property": "minecraft:using_item"
+    },
+    "property": "minecraft:display_context"
+  }
+}

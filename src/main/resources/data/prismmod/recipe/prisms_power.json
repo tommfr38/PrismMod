@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "prismmod:prism_ingot",
+    "#": "minecraft:book"
+  },
+  "pattern": [
+    "BBB",
+    "B#B",
+    "BBB"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "prismmod:prisms_power": 1
+      }
+    },
+    "id": "minecraft:enchanted_book"
+  }
+}

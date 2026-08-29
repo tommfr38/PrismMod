@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "prismmod:prism_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "prismmod:prism_ingot"
+  }
+}

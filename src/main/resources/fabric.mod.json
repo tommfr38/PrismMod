@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "zenithmod",
+  "id": "prismmod",
   "version": "${version}",
-  "name": "Zenith",
-  "description": "Adds the Bar of Zenith and the legendary Zenith Sword — 20 attack damage, 64 swings, and locked behind the Ender Dragon. Craft Zenith's Power to launch yourself off it like a firework.",
+  "name": "Prism",
+  "description": "Adds the Prism Ingot and the legendary Prism Sword — 20 attack damage, 64 swings, and locked behind the Ender Dragon. Craft Prism's Power to launch yourself off it like a firework.",
   "authors": [
     "Tomi"
   ],
@@ -11,7 +11,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.tomi.zenithmod.ZenithMod"
+      "net.tomi.prismmod.PrismMod"
     ]
   },
   "depends": {
