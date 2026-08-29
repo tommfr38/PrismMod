@@ -14,7 +14,6 @@ public class PrismBlocks {
 
     public static final ResourceKey<Block> PRISM_BLOCK_KEY = key("prism_block");
 
-    /** Full light level: the texture pulses, so the block should read as a light source. */
     public static final Block PRISM_BLOCK = Registry.register(
             BuiltInRegistries.BLOCK,
             PRISM_BLOCK_KEY,
@@ -22,7 +21,6 @@ public class PrismBlocks {
                     .mapColor(DyeColor.MAGENTA)
                     .strength(5.0F, 6.0F)
                     .requiresCorrectToolForDrops()
-                    .lightLevel(state -> 15)
                     .sound(SoundType.METAL)
                     .setId(PRISM_BLOCK_KEY)));
 
