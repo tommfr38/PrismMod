@@ -2,14 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "B": "prismmod:prism_ingot",
     "D": "minecraft:dragon_egg",
-    "#": "minecraft:stick"
+    "I": "prismmod:prism_ingot"
   },
   "pattern": [
-    " B ",
-    "BDB",
-    " # "
+    "III",
+    "IDI",
+    "III"
   ],
   "result": {
     "id": "prismmod:prism_sword"
