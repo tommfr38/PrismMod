@@ -6,8 +6,8 @@ Fabric mod for Minecraft **26.1.2**. Adds the Prism Ingot and the legendary Pris
 
 | Item | Notes |
 | --- | --- |
-| **Prism Ingot** (`prismmod:prism_ingot`) | Crafting material. Six-band spectrum across a classic ingot silhouette, with a metallic top-edge highlight. Rare. |
-| **Prism Sword** (`prismmod:prism_sword`) | 20 attack damage, 64 durability, 1.6 attacks/sec, Epic. Spectrum blade, iron guard and wooden grip. |
+| **Prism Ingot** (`prismmod:prism_ingot`) | Crafting material. Six-band spectrum travelling along a classic ingot silhouette, with a metallic top-edge highlight. Rare. |
+| **Prism Sword** (`prismmod:prism_sword`) | 20 attack damage, 64 durability, 1.6 attacks/sec, Epic. Travelling spectrum, shaded like an iron sword. |
 | **Prism Block** (`prismmod:prism_block`) | Decorative. Diagonal rainbow that sweeps and pulses, with darkened edge pixels so faces read as blocks. Emits no light. Pickaxe-mined (diamond or better). |
 
 ## Recipes
@@ -85,8 +85,8 @@ the model swap is what you actually see.
 - Block edge darkening: `EDGE_DARKEN` in the texture generator, currently 12%.
 - Pulse speed: `frametime` in `prism_block.png.mcmeta`. 1 tick per frame over 32 frames is
   one full pulse every 1.6s.
-- The ingot and sword textures are static; only the block animates. Its `.png.mcmeta`
-  drives the pulse.
+- Animation speed: `frametime` in each `.png.mcmeta`. The ingot and sword run 24 frames
+  at 2 ticks each, a 2.4s cycle; the block runs 32 at 1 tick.
 
 ## Building
 
