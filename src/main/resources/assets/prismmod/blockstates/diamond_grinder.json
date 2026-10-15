@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "prismmod:block/diamond_grinder"
+    },
+    "facing=east": {
+      "model": "prismmod:block/diamond_grinder",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "prismmod:block/diamond_grinder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "prismmod:block/diamond_grinder",
+      "y": 270
+    }
+  }
+}

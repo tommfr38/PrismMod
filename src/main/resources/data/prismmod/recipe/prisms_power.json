@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "B": "prismmod:prism_ingot",
+    "B": "prismmod:prism",
     "#": "minecraft:book"
   },
   "pattern": [

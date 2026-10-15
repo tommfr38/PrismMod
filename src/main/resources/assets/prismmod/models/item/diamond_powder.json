@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "prismmod:item/prism_ingot"
+    "layer0": "prismmod:item/diamond_powder"
   }
 }

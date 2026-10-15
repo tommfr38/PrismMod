@@ -1,31 +1,34 @@
 # Prism
 
-Fabric mod for Minecraft **26.1.2**. Adds the Prism Ingot and the legendary Prism Sword.
+Fabric mod for Minecraft **26.1.2**. Adds the Prism and the legendary Prism Sword.
 
 ## Items
 
 | Item | Notes |
 | --- | --- |
-| **Prism Ingot** (`prismmod:prism_ingot`) | Crafting material. Six-band spectrum travelling along a classic ingot silhouette, with a metallic top-edge highlight. Rare. |
-| **Prism Sword** (`prismmod:prism_sword`) | 20 attack damage, 64 durability, 1.6 attacks/sec, Epic. Travelling spectrum, shaded like an iron sword. |
-| **Prism Block** (`prismmod:prism_block`) | Decorative. Diagonal rainbow that sweeps and pulses, with darkened edge pixels so faces read as blocks. Emits no light. Pickaxe-mined (diamond or better). |
+| **Prism** (`prismmod:prism`) | Dropped by Prism Ore. A pink-scaled diamond. Rare. |
+| **Prism Sword** (`prismmod:prism_sword`) | 25 attack damage, 64 durability, 1.6 attacks/sec, Epic. Light pink, shaded like an iron sword. |
+| **Prism Block** (`prismmod:prism_block`) | Decorative. A pink-scaled diamond block. Pickaxe-mined (diamond or better). |
+| **Prism Ore / Deepslate Prism Ore** | Only exist where Prism Powder has been used. Needs a diamond pickaxe or better. Drops a Prism (Fortune applies), or itself with Silk Touch. |
+| **Diamond Grinder** (`prismmod:diamond_grinder`) | A black stonecutter with a diamond-edged blade. Right-click with a diamond to get 2 Diamond Powder. |
+| **Diamond Powder** | Ground diamond. |
+| **Prism Powder** | A pink bundle. Right-click a block: all stone and deepslate in a 3x3x3 cube around it becomes Prism Ore. One use each. |
+
+## Getting Prism
+
+1. **Diamond Grinder** — 8 netherite ingots around a stonecutter.
+2. Grind diamonds at the grinder: 1 diamond becomes 2 Diamond Powder.
+3. Put **50 Diamond Powder and 1 Pink Dye into any bundle**. It turns into Prism Powder on
+   its own (checked every 5 ticks; anything extra in the bundle is handed back).
+4. Use the Prism Powder on stone or deepslate, then mine the ore with a diamond pickaxe.
 
 ## Recipes
 
-**Prism Ingot** — 8 emerald blocks around 1 netherite block, yields **1** bar. A sword
-costs three of them, so three full crafts.
-
-```
-E E E
-E N E     E = minecraft:emerald_block
-E E E     N = minecraft:netherite_block
-```
-
-**Prism Sword** — every sword in the game, the Prism Ingot, and a dragon egg. Nine
+**Prism Sword** — every sword in the game, the Prism, and a dragon egg. Nine
 ingredients, one of each:
 
 ```
-wooden    ingot     netherite
+wooden    prism     netherite
 stone     egg       diamond
 copper    iron      golden
 ```
@@ -34,11 +37,11 @@ The recipe is **shapeless**, so that arrangement works and so does any other. Th
 consumed, so the sword cannot exist before the Ender Dragon is beaten.
 
 **Dragon egg refund** — put the Prism Sword alone in a crafting grid to get the dragon
-egg back. The sword is consumed; the bars, the stick and any enchantments are not
+egg back. The sword is consumed; the Prisms, the stick and any enchantments are not
 returned, and the sword's remaining durability does not matter.
 
-**Prism Block** — 9 bars in a 3x3, and a shapeless recipe turns the block back into
-9 bars. Standard storage-block convention, so nothing is ever lost by crafting it.
+**Prism Block** — 9 Prisms in a 3x3, and a shapeless recipe turns the block back into
+9 Prisms. Standard storage-block convention, so nothing is ever lost by crafting it.
 
 ## Prism's Power
 
@@ -46,7 +49,7 @@ An enchantment that does exactly one thing: hold right-click to draw the Prism S
 back, release to be thrown in the direction you are looking, like a firework under an
 elytra. Left-click still swings.
 
-**Craft it in a crafting table:** one book in the middle, 8 Prism Ingots around it. That
+**Craft it in a crafting table:** one book in the middle, 8 Prisms around it. That
 yields a Prism's Power book, which you apply to the sword on an anvil.
 
 - 3 second cooldown.
@@ -78,15 +81,10 @@ the model swap is what you actually see.
 
 ## Tuning
 
-- Damage and attack speed: `PrismItems.PRISM_SWORD`, the `sword(PRISM, 19.0F, -2.4F)` call.
-  The tooltip number is the player's base 1 plus the 19 here.
+- Damage and attack speed: `PrismItems.PRISM_SWORD`, the `sword(PRISM, 24.0F, -2.4F)` call.
+  The tooltip number is the player's base 1 plus the 24 here.
 - Durability and enchantability: the `PRISM` `ToolMaterial` in the same file.
-- Bars per craft: the `count` in `data/prismmod/recipe/prism_ingot.json`.
-- Block edge darkening: `EDGE_DARKEN` in the texture generator, currently 12%.
-- Pulse speed: `frametime` in `prism_block.png.mcmeta`. 1 tick per frame over 32 frames is
-  one full pulse every 1.6s.
-- Animation speed: `frametime` in each `.png.mcmeta`. The ingot and sword run 24 frames
-  at 2 ticks each, a 2.4s cycle; the block runs 32 at 1 tick.
+- Powder per Prism Powder: `POWDER_NEEDED` in `PrismPowderMaking`. Powder radius: `RADIUS` in `PrismPowderItem`.
 
 ## Building
 

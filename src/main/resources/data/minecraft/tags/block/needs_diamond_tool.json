@@ -1,5 +1,7 @@
 {
   "values": [
-    "prismmod:prism_block"
+    "prismmod:prism_block",
+    "prismmod:prism_ore",
+    "prismmod:deepslate_prism_ore"
   ]
 }

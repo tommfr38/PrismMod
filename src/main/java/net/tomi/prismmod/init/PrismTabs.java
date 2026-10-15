@@ -17,11 +17,26 @@ public class PrismTabs {
     private static final ResourceKey<CreativeModeTab> BUILDING_BLOCKS =
             ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.withDefaultNamespace("building_blocks"));
 
+    private static final ResourceKey<CreativeModeTab> NATURAL =
+            ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.withDefaultNamespace("natural_blocks"));
+    private static final ResourceKey<CreativeModeTab> FUNCTIONAL =
+            ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.withDefaultNamespace("functional_blocks"));
+
     public static void init() {
+        CreativeModeTabEvents.modifyOutputEvent(NATURAL).register(output -> {
+            output.accept(PrismItems.PRISM_ORE);
+            output.accept(PrismItems.DEEPSLATE_PRISM_ORE);
+        });
+        CreativeModeTabEvents.modifyOutputEvent(FUNCTIONAL)
+                .register(output -> output.accept(PrismItems.DIAMOND_GRINDER));
         CreativeModeTabEvents.modifyOutputEvent(COMBAT)
                 .register(output -> output.accept(PrismItems.PRISM_SWORD));
         CreativeModeTabEvents.modifyOutputEvent(INGREDIENTS)
-                .register(output -> output.accept(PrismItems.PRISM_INGOT));
+                .register(output -> {
+                    output.accept(PrismItems.PRISM_GEM);
+                    output.accept(PrismItems.DIAMOND_POWDER);
+                    output.accept(PrismItems.PRISM_POWDER);
+                });
         CreativeModeTabEvents.modifyOutputEvent(BUILDING_BLOCKS)
                 .register(output -> output.accept(PrismItems.PRISM_BLOCK));
     }

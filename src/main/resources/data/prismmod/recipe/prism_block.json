@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "B": "prismmod:prism_ingot"
+    "B": "prismmod:prism"
   },
   "pattern": [
     "BBB",

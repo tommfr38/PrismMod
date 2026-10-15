@@ -1,6 +1,11 @@
 {
-  "item.prismmod.prism_ingot": "Prism Ingot",
+  "item.prismmod.prism": "Prism",
   "item.prismmod.prism_sword": "Prism Sword",
   "block.prismmod.prism_block": "Prism Block",
-  "enchantment.prismmod.prisms_power": "Prism's Power"
+  "enchantment.prismmod.prisms_power": "Prism's Power",
+  "block.prismmod.prism_ore": "Prism Ore",
+  "block.prismmod.deepslate_prism_ore": "Deepslate Prism Ore",
+  "block.prismmod.diamond_grinder": "Diamond Grinder",
+  "item.prismmod.diamond_powder": "Diamond Powder",
+  "item.prismmod.prism_powder": "Prism Powder"
 }

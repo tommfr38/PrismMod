@@ -11,6 +11,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.block.Block;
 import net.tomi.prismmod.PrismMod;
+import net.tomi.prismmod.item.PrismPowderItem;
 import net.tomi.prismmod.item.PrismSwordItem;
 
 import java.util.function.Function;
@@ -33,25 +34,38 @@ public class PrismItems {
             PrismTags.PRISM_REPAIR_MATERIALS
     );
 
-    public static final Item PRISM_INGOT = register("prism_ingot",
+    public static final Item PRISM_GEM = register("prism",
             props -> props.rarity(Rarity.RARE));
 
     /**
-     * Attack damage shows as 20 in the tooltip: the player's base 1 plus this 19.
+     * Attack damage shows as 25 in the tooltip: the player's base 1 plus this 24.
      * -2.4F attack speed matches every vanilla sword.
      */
     public static final Item PRISM_SWORD = register("prism_sword",
-            props -> props.sword(PRISM, 19.0F, -2.4F).rarity(Rarity.EPIC),
+            props -> props.sword(PRISM, 24.0F, -2.4F).rarity(Rarity.EPIC),
             PrismSwordItem::new);
 
     public static final Item PRISM_BLOCK = registerBlockItem("prism_block", PrismBlocks.PRISM_BLOCK);
 
+    public static final Item PRISM_ORE = registerBlockItem("prism_ore", PrismBlocks.PRISM_ORE, Rarity.UNCOMMON);
+    public static final Item DEEPSLATE_PRISM_ORE = registerBlockItem("deepslate_prism_ore", PrismBlocks.DEEPSLATE_PRISM_ORE, Rarity.UNCOMMON);
+    public static final Item DIAMOND_GRINDER = registerBlockItem("diamond_grinder", PrismBlocks.DIAMOND_GRINDER, Rarity.UNCOMMON);
+
+    public static final Item DIAMOND_POWDER = register("diamond_powder", props -> props);
+
+    public static final Item PRISM_POWDER = register("prism_powder",
+            props -> props.rarity(Rarity.RARE), PrismPowderItem::new);
+
     static Item registerBlockItem(String name, Block block) {
+        return registerBlockItem(name, block, Rarity.RARE);
+    }
+
+    static Item registerBlockItem(String name, Block block, Rarity rarity) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, PrismMod.id(name));
         return Registry.register(BuiltInRegistries.ITEM, key,
                 new BlockItem(block, new Item.Properties()
                         .useBlockDescriptionPrefix()
-                        .rarity(Rarity.RARE)
+                        .rarity(rarity)
                         .setId(key)));
     }
 

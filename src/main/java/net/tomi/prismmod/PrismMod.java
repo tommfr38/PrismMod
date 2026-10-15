@@ -22,5 +22,6 @@ public class PrismMod implements ModInitializer {
         PrismBlocks.init();
         PrismItems.init();
         PrismTabs.init();
+        PrismPowderMaking.init();
     }
 }

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "prismmod:item/prism_ingot"
+    "model": "prismmod:item/prism_powder"
   }
 }
