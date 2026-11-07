@@ -43,3 +43,16 @@ java {
     sourceCompatibility = JavaVersion.VERSION_25
     targetCompatibility = JavaVersion.VERSION_25
 }
+
+// Client game tests live in src/gametest and are never part of the shipped jar.
+// Run them with ./gradlew runClientGametest.
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        modId = "prismmod-gametest"
+        enableGameTests = false
+        enableClientGameTests = true
+        eula = true
+        clearRunDirectory = true
+    }
+}

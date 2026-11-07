@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "prismmod:block/pylon_pink_top",
+    "bottom": "prismmod:block/pylon_pink_top",
+    "side": "prismmod:block/pylon_pink_side"
+  }
+}

@@ -1,5 +1,6 @@
 package net.tomi.prismmod.item;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -12,9 +13,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.tomi.prismmod.PrismRightClicks;
 import net.tomi.prismmod.init.PrismEnchantments;
+
+import java.util.function.Consumer;
 
 /**
  * The Prism Sword. An ordinary sword in every respect except one: with Prism's Power on
@@ -42,6 +48,13 @@ public class PrismSwordItem extends Item {
         super(properties);
     }
 
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display,
+                                Consumer<Component> out, TooltipFlag flag) {
+        super.appendHoverText(stack, context, display, out, flag);
+        PrismTooltips.add(stack, out);
+    }
+
     /** Drives the arm pose. The drawn-back sword itself is a model swap, in items/prism_sword.json. */
     @Override
     public ItemUseAnimation getUseAnimation(ItemStack stack) {
@@ -56,8 +69,10 @@ public class PrismSwordItem extends Item {
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        // Without the enchantment this is an ordinary sword.
-        if (!PrismEnchantments.hasPrismsPower(stack) || player.getCooldowns().isOnCooldown(stack)) {
+        // Without the enchantment, or with Prism Right Clicks off, this is an ordinary sword
+        // and the right click falls through to the other hand.
+        if (!PrismEnchantments.hasPrismsPower(stack) || !PrismRightClicks.isEnabled(player)
+                || player.getCooldowns().isOnCooldown(stack)) {
             return InteractionResult.PASS;
         }
         player.startUsingItem(hand);
@@ -72,7 +87,8 @@ public class PrismSwordItem extends Item {
         if (USE_DURATION - timeLeft < WINDUP_TICKS) {
             return false;
         }
-        if (!PrismEnchantments.hasPrismsPower(stack) || player.getCooldowns().isOnCooldown(stack)) {
+        if (!PrismEnchantments.hasPrismsPower(stack) || !PrismRightClicks.isEnabled(player)
+                || player.getCooldowns().isOnCooldown(stack)) {
             return false;
         }
 

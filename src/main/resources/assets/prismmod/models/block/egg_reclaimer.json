@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "prismmod:block/egg_reclaimer_top",
+    "side": "prismmod:block/egg_reclaimer_side"
+  }
+}

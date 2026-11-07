@@ -1,0 +1,8 @@
+{
+  "pylon_activate": {
+    "subtitle": "subtitles.prismmod.pylon_activate",
+    "sounds": [
+      { "name": "minecraft:entity.enderman.teleport", "type": "event" }
+    ]
+  }
+}

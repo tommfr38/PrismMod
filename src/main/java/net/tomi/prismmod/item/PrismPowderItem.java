@@ -2,17 +2,23 @@ package net.tomi.prismmod.item;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.tomi.prismmod.init.PrismBlocks;
+
+import java.util.function.Consumer;
 
 /**
  * Prism Powder, after Terraria's purification powder: right-click a block and every stone
@@ -26,6 +32,13 @@ public class PrismPowderItem extends Item {
 
     public PrismPowderItem(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display,
+                                Consumer<Component> out, TooltipFlag flag) {
+        super.appendHoverText(stack, context, display, out, flag);
+        PrismTooltips.add(stack, out);
     }
 
     @Override

@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.tomi.prismmod.PrismMod;
 import net.tomi.prismmod.block.DiamondGrinderBlock;
+import net.tomi.prismmod.block.EggReclaimerBlock;
+import net.tomi.prismmod.block.PylonBlock;
 
 public class PrismBlocks {
 
@@ -60,6 +62,30 @@ public class PrismBlocks {
                     .strength(3.5F)
                     .requiresCorrectToolForDrops()
                     .setId(DIAMOND_GRINDER_KEY)));
+
+    public static final ResourceKey<Block> EGG_RECLAIMER_KEY = key("egg_reclaimer");
+
+    public static final Block EGG_RECLAIMER = Registry.register(
+            BuiltInRegistries.BLOCK,
+            EGG_RECLAIMER_KEY,
+            new EggReclaimerBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.PINK)
+                    .strength(3.5F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)
+                    .setId(EGG_RECLAIMER_KEY)));
+
+    public static final ResourceKey<Block> PYLON_KEY = key("pylon");
+
+    public static final Block PYLON = Registry.register(
+            BuiltInRegistries.BLOCK,
+            PYLON_KEY,
+            new PylonBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.PINK)
+                    .strength(4.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> 5)
+                    .setId(PYLON_KEY)));
 
     private static ResourceKey<Block> key(String name) {
         return ResourceKey.create(Registries.BLOCK, PrismMod.id(name));

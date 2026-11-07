@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "dimension=other": {
+      "model": "prismmod:block/pylon_pink"
+    },
+    "dimension=overworld": {
+      "model": "prismmod:block/pylon_green"
+    },
+    "dimension=nether": {
+      "model": "prismmod:block/pylon_red"
+    },
+    "dimension=end": {
+      "model": "prismmod:block/pylon_yellow"
+    }
+  }
+}

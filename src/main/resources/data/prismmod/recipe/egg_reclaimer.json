@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "prismmod:prism",
+    "E": "minecraft:ender_eye"
+  },
+  "pattern": [
+    "PPP",
+    "PEP",
+    "PPP"
+  ],
+  "result": {
+    "id": "prismmod:egg_reclaimer"
+  }
+}

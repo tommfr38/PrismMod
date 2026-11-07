@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": "minecraft:obsidian",
+    "P": "prismmod:prism",
+    "N": "minecraft:nether_star"
+  },
+  "pattern": [
+    "OPO",
+    "ONO",
+    "OPO"
+  ],
+  "result": {
+    "id": "prismmod:pylon_core"
+  }
+}

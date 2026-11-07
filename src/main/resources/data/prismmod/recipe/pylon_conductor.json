@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "minecraft:redstone",
+    "P": "prismmod:prism"
+  },
+  "pattern": [
+    "RRR",
+    "RPR",
+    "RRR"
+  ],
+  "result": {
+    "id": "prismmod:pylon_conductor"
+  }
+}

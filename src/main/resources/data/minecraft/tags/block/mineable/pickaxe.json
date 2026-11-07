@@ -3,6 +3,8 @@
     "prismmod:prism_block",
     "prismmod:prism_ore",
     "prismmod:deepslate_prism_ore",
-    "prismmod:diamond_grinder"
+    "prismmod:diamond_grinder",
+    "prismmod:egg_reclaimer",
+    "prismmod:pylon"
   ]
 }

@@ -8,8 +8,15 @@
     "Tomi"
   ],
   "license": "MIT",
+  "icon": "assets/prismmod/icon.png",
   "environment": "*",
+  "mixins": [
+    "prismmod.mixins.json"
+  ],
   "entrypoints": {
+    "client": [
+      "net.tomi.prismmod.client.PrismModClient"
+    ],
     "main": [
       "net.tomi.prismmod.PrismMod"
     ]
